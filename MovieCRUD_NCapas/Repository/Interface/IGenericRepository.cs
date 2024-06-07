@@ -1,0 +1,12 @@
+﻿namespace MovieCRUD_NCapas.Repository.Interface
+{
+    public interface IGenericRepository<T> where T : class
+    {
+        Task<List<T>> GetAll();
+        Task<T> GetById(int id);
+        Task<T> Create(T model);
+        Task<bool> Update(T model);
+        Task<bool> Delete(T model);
+
+    }
+}
