@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MovieCRUD_NCapas")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d592631f7438858af4908a133c91eac503ca7e91")]
 [assembly: System.Reflection.AssemblyProductAttribute("MovieCRUD_NCapas")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MovieCRUD_NCapas")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

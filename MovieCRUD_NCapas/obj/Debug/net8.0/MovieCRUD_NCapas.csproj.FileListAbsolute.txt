@@ -136,3 +136,4 @@ E:\Net\MovieCRUD_NCapas\MovieCRUD_NCapas\obj\Debug\net8.0\MovieCRUD_NCapas.pdb
 E:\Net\MovieCRUD_NCapas\MovieCRUD_NCapas\obj\Debug\net8.0\MovieCRUD_NCapas.genruntimeconfig.cache
 E:\Net\MovieCRUD_NCapas\MovieCRUD_NCapas\obj\Debug\net8.0\ref\MovieCRUD_NCapas.dll
 E:\Net\MovieCRUD_NCapas\MovieCRUD_NCapas\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+E:\Net\MovieCRUD_NCapas\MovieCRUD_NCapas\obj\Debug\net8.0\MovieCRUD_NCapas.sourcelink.json

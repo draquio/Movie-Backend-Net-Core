@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "E:\\Net\\MovieCRUD_NCapas\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7F288C9A-7814-4284-9C24-BDE2CE5F44AE}|MovieCRUD_NCapas\\MovieCRUD_NCapas.csproj|e:\\net\\moviecrud_ncapas\\moviecrud_ncapas\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F288C9A-7814-4284-9C24-BDE2CE5F44AE}|MovieCRUD_NCapas\\MovieCRUD_NCapas.csproj|solutionrelative:moviecrud_ncapas\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7F288C9A-7814-4284-9C24-BDE2CE5F44AE}|MovieCRUD_NCapas\\MovieCRUD_NCapas.csproj|e:\\net\\moviecrud_ncapas\\moviecrud_ncapas\\repository\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F288C9A-7814-4284-9C24-BDE2CE5F44AE}|MovieCRUD_NCapas\\MovieCRUD_NCapas.csproj|solutionrelative:moviecrud_ncapas\\repository\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7F288C9A-7814-4284-9C24-BDE2CE5F44AE}|MovieCRUD_NCapas\\MovieCRUD_NCapas.csproj|e:\\net\\moviecrud_ncapas\\moviecrud_ncapas\\services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F288C9A-7814-4284-9C24-BDE2CE5F44AE}|MovieCRUD_NCapas\\MovieCRUD_NCapas.csproj|solutionrelative:moviecrud_ncapas\\services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7F288C9A-7814-4284-9C24-BDE2CE5F44AE}|MovieCRUD_NCapas\\MovieCRUD_NCapas.csproj|e:\\net\\moviecrud_ncapas\\moviecrud_ncapas\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F288C9A-7814-4284-9C24-BDE2CE5F44AE}|MovieCRUD_NCapas\\MovieCRUD_NCapas.csproj|solutionrelative:moviecrud_ncapas\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,40 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Category.cs",
-              "DocumentMoniker": "E:\\Net\\MovieCRUD_NCapas\\MovieCRUD_NCapas\\Models\\Category.cs",
-              "RelativeDocumentMoniker": "MovieCRUD_NCapas\\Models\\Category.cs",
-              "ToolTip": "E:\\Net\\MovieCRUD_NCapas\\MovieCRUD_NCapas\\Models\\Category.cs",
-              "RelativeToolTip": "MovieCRUD_NCapas\\Models\\Category.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAqAAAA",
+              "Title": "CategoryController.cs",
+              "DocumentMoniker": "E:\\Net\\MovieCRUD_NCapas\\MovieCRUD_NCapas\\Controllers\\CategoryController.cs",
+              "RelativeDocumentMoniker": "MovieCRUD_NCapas\\Controllers\\CategoryController.cs",
+              "ToolTip": "E:\\Net\\MovieCRUD_NCapas\\MovieCRUD_NCapas\\Controllers\\CategoryController.cs",
+              "RelativeToolTip": "MovieCRUD_NCapas\\Controllers\\CategoryController.cs",
+              "ViewState": "AQIAAIkAAAAAAAAAAAAcwJ0AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-07T15:06:50.169Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CategoryService.cs",
-              "DocumentMoniker": "E:\\Net\\MovieCRUD_NCapas\\MovieCRUD_NCapas\\Services\\CategoryService.cs",
-              "RelativeDocumentMoniker": "MovieCRUD_NCapas\\Services\\CategoryService.cs",
-              "ToolTip": "E:\\Net\\MovieCRUD_NCapas\\MovieCRUD_NCapas\\Services\\CategoryService.cs",
-              "RelativeToolTip": "MovieCRUD_NCapas\\Services\\CategoryService.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAQwCIAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-07T15:05:38.984Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GenericRepository.cs",
-              "DocumentMoniker": "E:\\Net\\MovieCRUD_NCapas\\MovieCRUD_NCapas\\Repository\\GenericRepository.cs",
-              "RelativeDocumentMoniker": "MovieCRUD_NCapas\\Repository\\GenericRepository.cs",
-              "ToolTip": "E:\\Net\\MovieCRUD_NCapas\\MovieCRUD_NCapas\\Repository\\GenericRepository.cs",
-              "RelativeToolTip": "MovieCRUD_NCapas\\Repository\\GenericRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAUwBMAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-07T15:05:38.995Z",
+              "WhenOpened": "2024-06-07T21:34:32.532Z",
               "EditorCaption": ""
             }
           ]
