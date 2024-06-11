@@ -32,7 +32,7 @@ namespace MovieCRUD_NCapas.Services
             }
             catch (Exception ex)
             {
-                throw new ApplicationException("An error occurred while retrieving the categories", ex);
+                throw new ApplicationException($"An error occurred while retrieving the categories: {ex.Message}", ex);
             }
         }
 
@@ -51,7 +51,7 @@ namespace MovieCRUD_NCapas.Services
             }
             catch (Exception ex)
             {
-                throw new ApplicationException("An error occurred while retrieving the category", ex);
+                throw new ApplicationException($"An error occurred while retrieving the category: {ex.Message}", ex);
             }
         }
 
@@ -71,7 +71,7 @@ namespace MovieCRUD_NCapas.Services
             }
             catch (Exception ex)
             {
-                throw new ApplicationException("An error occurred while creating the category", ex);
+                throw new ApplicationException($"An error occurred while creating the category: {ex.Message}", ex);
             }
         }
         
@@ -95,7 +95,7 @@ namespace MovieCRUD_NCapas.Services
             }
             catch (Exception ex)
             {
-                throw new ApplicationException("An error occurred while updating the category", ex);
+                throw new ApplicationException($"An error occurred while updating the category: {ex.Message}", ex);
             }
         }
 
@@ -118,7 +118,7 @@ namespace MovieCRUD_NCapas.Services
             }
             catch (Exception ex)
             {
-                throw new ApplicationException("An error occurred while deleting the category", ex);
+                throw new ApplicationException($"An error occurred while deleting the category: {ex.Message}", ex);
             }
         }
     }

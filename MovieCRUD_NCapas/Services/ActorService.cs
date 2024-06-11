@@ -31,7 +31,7 @@ namespace MovieCRUD_NCapas.Services
             }
             catch (Exception ex)
             {
-                throw new ApplicationException("An error occurred while retrieving the Movies", ex);
+                throw new ApplicationException($"An error occurred while retrieving the Actors: {ex.Message}", ex);
             }
         }
 
@@ -49,7 +49,7 @@ namespace MovieCRUD_NCapas.Services
             }
             catch (Exception ex)
             {
-                throw new ApplicationException("An error occurred while retrieving the Actor", ex);
+                throw new ApplicationException($"An error occurred while retrieving the Actor: {ex.Message}", ex);
             }
         }
         public async Task<ActorDTO> Create(ActorDTO actorDTO)
@@ -67,7 +67,7 @@ namespace MovieCRUD_NCapas.Services
             }
             catch (Exception ex)
             {
-                throw new ApplicationException("An error occurred while creating the Actor", ex);
+                throw new ApplicationException($"An error occurred while creating the Actor: {ex.Message}", ex);
             }
         }
         public async Task<bool> Update(ActorDTO actorDTO)
@@ -89,7 +89,7 @@ namespace MovieCRUD_NCapas.Services
             }
             catch (Exception ex)
             {
-                throw new ApplicationException("An error occurred while updating the Actors", ex);
+                throw new ApplicationException($"An error occurred while updating the Actor: {ex.Message}", ex);
             }
         }
         public async Task<bool> Delete(int id)
@@ -110,7 +110,7 @@ namespace MovieCRUD_NCapas.Services
             }
             catch (Exception ex)
             {
-                throw new ApplicationException("An error occurred while deleting the Actors", ex);
+                throw new ApplicationException($"An error occurred while deleting the Actor: {ex.Message}", ex);
             }
         }
     }

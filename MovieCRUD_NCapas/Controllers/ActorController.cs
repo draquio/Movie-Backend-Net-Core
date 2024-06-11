@@ -1,5 +1,4 @@
 ﻿
-
 using Microsoft.AspNetCore.Mvc;
 using MovieCRUD_NCapas.DTO;
 using MovieCRUD_NCapas.Services.Interface;
@@ -9,22 +8,22 @@ namespace MovieCRUD_NCapas.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CategoryController : ControllerBase
+    public class ActorController : ControllerBase
     {
-        private readonly ICategoryService _categoryService;
-
-        public CategoryController(ICategoryService categoryService)
+        private readonly IActorService _actorService;
+        public ActorController(IActorService actorService)
         {
-            _categoryService = categoryService;
+            _actorService = actorService;
         }
 
         [HttpGet]
-        public async Task<ActionResult<CategoryDTO>> GetList() {
-            var rsp = new Response<List<CategoryDTO>>();
+        public async Task<ActionResult<ActorDTO>> GetList()
+        {
+            var rsp = new Response<List<ActorDTO>>();
             try
             {
                 rsp.status = true;
-                rsp.value = await _categoryService.GetCategories();
+                rsp.value = await _actorService.GetActors();
             }
             catch (Exception ex)
             {
@@ -35,17 +34,17 @@ namespace MovieCRUD_NCapas.Controllers
             return Ok(rsp);
         }
         [HttpGet("{id:int}")]
-        public async Task<ActionResult<CategoryDTO>> GetCategory(int id)
+        public async Task<ActionResult<ActorDTO>> GetActor(int id)
         {
-            var rsp = new Response<CategoryDTO>();
+            var rsp = new Response<ActorDTO>();
             try
             {
                 rsp.status = true;
-                rsp.value = await _categoryService.GetById(id);
+                rsp.value = await _actorService.GetById(id);
                 if (rsp.value == null)
                 {
                     rsp.status = false;
-                    rsp.msg = "Category not found";
+                    rsp.msg = "Actor not found";
                     return NotFound(rsp);
                 }
             }
@@ -57,17 +56,15 @@ namespace MovieCRUD_NCapas.Controllers
             }
             return Ok(rsp);
         }
-
         [HttpPost]
-        public async Task<ActionResult<CategoryDTO>> Create([FromBody] CategoryDTO category)
-        {
-            var rsp = new Response<CategoryDTO>();
+        public async Task<ActionResult> Create([FromBody] ActorDTO actor) {
+            var rsp = new Response<ActorDTO>();
             try
             {
-                if (category == null)
+                if (actor == null)
                 {
                     rsp.status = false;
-                    rsp.msg = "Category can't be null";
+                    rsp.msg = "Actor can't be null";
                     return BadRequest(rsp);
                 }
                 if (!ModelState.IsValid)
@@ -81,7 +78,7 @@ namespace MovieCRUD_NCapas.Controllers
                     return BadRequest(rsp);
                 }
                 rsp.status = true;
-                rsp.value = await _categoryService.Create(category);
+                rsp.value = await _actorService.Create(actor);
             }
             catch (Exception ex)
             {
@@ -89,18 +86,17 @@ namespace MovieCRUD_NCapas.Controllers
                 rsp.msg = $"An error occurred: {ex.Message}";
                 return StatusCode(500, rsp);
             }
-            return CreatedAtAction(nameof(GetCategory), new { id = category.Id }, rsp);
+            return CreatedAtAction(nameof(GetActor), new { id = actor.Id }, rsp);
         }
         [HttpPut("{id:int}")]
-        public async Task<ActionResult<CategoryDTO>> Update([FromBody] CategoryDTO category, int id)
-        {
+        public async Task<ActionResult<Response<bool>>> Update([FromBody] ActorDTO actor, int id) {
             var rsp = new Response<bool>();
             try
             {
-                if (category == null || category.Id != id)
+                if (actor == null || actor.Id != id)
                 {
                     rsp.status = false;
-                    rsp.msg = "Category can't be null or ID mismatch";
+                    rsp.msg = "Actor can't be null or ID mismatch";
                     return BadRequest(rsp);
                 }
                 if (!ModelState.IsValid)
@@ -113,16 +109,16 @@ namespace MovieCRUD_NCapas.Controllers
                         .ToList();
                     return BadRequest(rsp);
                 }
-                bool response = await _categoryService.Update(category);
+                bool response = await _actorService.Update(actor);
                 if (!response)
                 {
                     rsp.status = false;
-                    rsp.msg = "Category couldn't be updated";
+                    rsp.msg = "Actor couldn't be updated";
                     return NotFound(rsp);
                 }
                 rsp.status = true;
+                rsp.msg = "Actor updated successfully";
                 rsp.value = response;
-                rsp.msg = "Category updated successfully";
             }
             catch (Exception ex)
             {
@@ -132,23 +128,29 @@ namespace MovieCRUD_NCapas.Controllers
             }
             return Ok(rsp);
         }
-
         [HttpDelete("{id:int}")]
-        public async Task<ActionResult<CategoryDTO>> Delete(int id)
+        public async Task<ActionResult<Response<bool>>> Delete(int id)
         {
             var rsp = new Response<bool>();
             try
             {
-                bool response = await _categoryService.Delete(id);
-                if (!response)
+                ActorDTO actor = await _actorService.GetById(id);
+                if (actor == null)
                 {
                     rsp.status = false;
-                    rsp.msg = "Category couldn't be deleted";
+                    rsp.msg = "Actor not found";
                     return NotFound(rsp);
+                }
+                bool response = await _actorService.Delete(id);
+                if (!response)
+                {
+                    rsp.status=false;
+                    rsp.msg = "Actor couldn't be deleted";
+                    return StatusCode(500, rsp);
                 }
                 rsp.status = true;
                 rsp.value = response;
-                rsp.msg = "Category deleted successfully";
+                rsp.msg = "Actor deleted successfully";
             }
             catch (Exception ex)
             {
@@ -156,7 +158,7 @@ namespace MovieCRUD_NCapas.Controllers
                 rsp.msg = $"An error occurred: {ex.Message}";
                 return StatusCode(500, rsp);
             }
-            return NoContent();
+            return Ok(rsp);
         }
     }
 }
