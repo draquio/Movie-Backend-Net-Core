@@ -24,6 +24,7 @@ namespace MovieCRUD_NCapas.IOC
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IActorService, ActorService>();
             services.AddScoped<IMovieService, MovieService>();
+            services.AddScoped<IReviewService, ReviewService>();
         }
     }
 }

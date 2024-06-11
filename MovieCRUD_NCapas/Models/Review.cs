@@ -12,6 +12,7 @@ namespace MovieCRUD_NCapas.Models
         public int MovieId { get; set; }
         public string? ReviewerName { get; set; }
         [Required]
+        [Range(0, 5, ErrorMessage = "Rating must be between 0 and 5")]
         public int Rating { get; set; }
         public string? Comment { get; set; }
         public DateTime ReviewDate { get; set; }

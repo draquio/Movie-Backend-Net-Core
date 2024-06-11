@@ -14,5 +14,12 @@ namespace MovieCRUD_NCapas.DBContext
         public virtual DbSet<MovieActor> MoviesActors { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<MovieCategory> MovieCategories { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Review>()
+                .Navigation(review => review.Movie)
+                .AutoInclude();
+        }
     }
 }

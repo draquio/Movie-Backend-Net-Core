@@ -32,10 +32,15 @@ namespace MovieCRUD_NCapas.Utility
 
             #region Review
             CreateMap<Review, ReviewDTO>()
+                .ForMember(dto => dto.MovieId, options => options.MapFrom(review => review.MovieId))
                 .ForMember(dto => dto.MovieName, options => options.MapFrom(review => review.Movie.Title))
                 .ForMember(dto => dto.Rating, options => options.MapFrom(review => $"{review.Rating}/5"))
-                .ForMember(dto => dto.ReviewDate, options => options.MapFrom(review => review.ReviewDate.ToString("dd/MM/yyyy")))
-                .ForMember(dto => dto.MovieId, options => options.MapFrom(review => review.Movie.Id));
+                .ForMember(dto => dto.ReviewDate, options => options.MapFrom(review => review.ReviewDate.ToString("dd/MM/yyyy")));
+
+            CreateMap<ReviewDTO, Review>()
+                .ForMember(review => review.Rating, options => options.MapFrom(dto => int.Parse(dto.Rating)))
+                .ForMember(review => review.ReviewDate, options => options.MapFrom(dto => DateTime.ParseExact(dto.ReviewDate, "dd/MM/yyyy", CultureInfo.InvariantCulture)));
+
             #endregion
             /*
             #region Movie

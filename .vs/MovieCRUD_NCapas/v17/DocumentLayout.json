@@ -1,71 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "E:\\Net\\MovieCRUD_NCapas\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{7F288C9A-7814-4284-9C24-BDE2CE5F44AE}|MovieCRUD_NCapas\\MovieCRUD_NCapas.csproj|e:\\net\\moviecrud_ncapas\\moviecrud_ncapas\\services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F288C9A-7814-4284-9C24-BDE2CE5F44AE}|MovieCRUD_NCapas\\MovieCRUD_NCapas.csproj|solutionrelative:moviecrud_ncapas\\services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7F288C9A-7814-4284-9C24-BDE2CE5F44AE}|MovieCRUD_NCapas\\MovieCRUD_NCapas.csproj|e:\\net\\moviecrud_ncapas\\moviecrud_ncapas\\services\\actorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F288C9A-7814-4284-9C24-BDE2CE5F44AE}|MovieCRUD_NCapas\\MovieCRUD_NCapas.csproj|solutionrelative:moviecrud_ncapas\\services\\actorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7F288C9A-7814-4284-9C24-BDE2CE5F44AE}|MovieCRUD_NCapas\\MovieCRUD_NCapas.csproj|e:\\net\\moviecrud_ncapas\\moviecrud_ncapas\\controllers\\actorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F288C9A-7814-4284-9C24-BDE2CE5F44AE}|MovieCRUD_NCapas\\MovieCRUD_NCapas.csproj|solutionrelative:moviecrud_ncapas\\controllers\\actorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CategoryService.cs",
-              "DocumentMoniker": "E:\\Net\\MovieCRUD_NCapas\\MovieCRUD_NCapas\\Services\\CategoryService.cs",
-              "RelativeDocumentMoniker": "MovieCRUD_NCapas\\Services\\CategoryService.cs",
-              "ToolTip": "E:\\Net\\MovieCRUD_NCapas\\MovieCRUD_NCapas\\Services\\CategoryService.cs",
-              "RelativeToolTip": "MovieCRUD_NCapas\\Services\\CategoryService.cs",
-              "ViewState": "AQIAAGQAAAAAAAAAAAAcwHIAAABLAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-11T15:38:58.354Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ActorController.cs",
-              "DocumentMoniker": "E:\\Net\\MovieCRUD_NCapas\\MovieCRUD_NCapas\\Controllers\\ActorController.cs",
-              "RelativeDocumentMoniker": "MovieCRUD_NCapas\\Controllers\\ActorController.cs",
-              "ToolTip": "E:\\Net\\MovieCRUD_NCapas\\MovieCRUD_NCapas\\Controllers\\ActorController.cs",
-              "RelativeToolTip": "MovieCRUD_NCapas\\Controllers\\ActorController.cs",
-              "ViewState": "AQIAACgAAAAAAAAAAAAswGEAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-11T15:27:43.818Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ActorService.cs",
-              "DocumentMoniker": "E:\\Net\\MovieCRUD_NCapas\\MovieCRUD_NCapas\\Services\\ActorService.cs",
-              "RelativeDocumentMoniker": "MovieCRUD_NCapas\\Services\\ActorService.cs",
-              "ToolTip": "E:\\Net\\MovieCRUD_NCapas\\MovieCRUD_NCapas\\Services\\ActorService.cs",
-              "RelativeToolTip": "MovieCRUD_NCapas\\Services\\ActorService.cs",
-              "ViewState": "AQIAAG8AAAAAAAAAAAAmwBoAAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-11T15:23:34.347Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

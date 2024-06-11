@@ -1,4 +1,6 @@
-﻿namespace MovieCRUD_NCapas.DTO
+﻿using System.Text.Json.Serialization;
+
+namespace MovieCRUD_NCapas.DTO
 {
     public class ReviewDTO
     {

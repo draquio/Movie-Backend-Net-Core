@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MovieCRUD_NCapas.DBContext;
 using MovieCRUD_NCapas.Repository.Interface;
+using System.Linq.Expressions;
 
 namespace MovieCRUD_NCapas.Repository
 {
