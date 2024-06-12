@@ -7,10 +7,11 @@ namespace MovieCRUD_NCapas.Utility
 {
     public class AutoMapperProfile : Profile
     {
-        //private readonly MapperFunctions _mapperFunctions;
-        // public AutoMapperProfile(MapperFunctions mapperFuntions) {
-        public AutoMapperProfile() {
-            //_mapperFunctions = mapperFuntions;
+        private readonly MapperFunctions _mapperFunctions;
+        public AutoMapperProfile(MapperFunctions mapperFunctions) {
+            _mapperFunctions = mapperFunctions;
+
+
 
             #region Category
             CreateMap<Category, CategoryDTO>()
@@ -42,19 +43,20 @@ namespace MovieCRUD_NCapas.Utility
                 .ForMember(review => review.ReviewDate, options => options.MapFrom(dto => DateTime.ParseExact(dto.ReviewDate, "dd/MM/yyyy", CultureInfo.InvariantCulture)));
 
             #endregion
-            /*
             #region Movie
             CreateMap<Movie, MovieDTO>()
                 .ForMember(dto => dto.ReleaseDate, options => options.MapFrom(movie => movie.ReleaseDate.ToString("dd/MM/yyyy")))
                 .ForMember(dto => dto.Duration, options => options.MapFrom(movie => _mapperFunctions.FormatDuration(movie.Duration)))
-                .ForMember(dto => dto.Rating, options => options.MapFrom(movie => _mapperFunctions.CalculateRating(movie.Reviews)))
-                .ForMember(dto => dto.Categories, options => options.MapFrom(movie => movie.MovieCategories))
-                .ForMember(dto => dto.Actors, options => options.MapFrom(movie => movie.MovieActors));
+                //.ForMember(dto => dto.Rating, options => options.MapFrom(movie => _mapperFunctions.CalculateRating(movie.Reviews)))
+                .ForMember(dto => dto.Rating, options => options.MapFrom(movie => "No data"))
+                .ForMember(dto => dto.Categories, options => options.MapFrom(movie => movie.MovieCategories.Select(mc => mc.Category)))
+                .ForMember(dto => dto.Actors, options => options.MapFrom(movie => movie.MovieActors.Select(ma => ma.Actor)));
+
             CreateMap<MovieDTO, Movie>()
                 .ForMember(movie => movie.ReleaseDate, options => options.MapFrom(dto => _mapperFunctions.DateTimeFormat(dto.ReleaseDate)))
                 .ForMember(movie => movie.Duration, options => options.MapFrom(dto => int.Parse(dto.Duration)));
             #endregion
-            */
+
         }
 
     }

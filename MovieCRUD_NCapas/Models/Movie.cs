@@ -14,7 +14,6 @@ namespace MovieCRUD_NCapas.Models
         [Required]
         public DateTime ReleaseDate { get; set; }
         public int Duration { get; set; }
-        public int Rating { get; set; }
         public string? Poster {  get; set; }
         public virtual ICollection<MovieCategory> MovieCategories { get; set; } = new List<MovieCategory>();
         public virtual ICollection<MovieActor> MovieActors { get; set; } = new List<MovieActor>();

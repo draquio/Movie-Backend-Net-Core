@@ -1,6 +1,6 @@
-﻿
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using MovieCRUD_NCapas.DTO;
+using MovieCRUD_NCapas.Models;
 using MovieCRUD_NCapas.Services.Interface;
 using MovieCRUD_NCapas.Utility;
 
@@ -8,22 +8,22 @@ namespace MovieCRUD_NCapas.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ActorController : ControllerBase
+    public class MovieController : ControllerBase
     {
-        private readonly IActorService _actorService;
-        public ActorController(IActorService actorService)
-        {
-            _actorService = actorService;
-        }
+        private readonly IMovieService _movieService;
 
-        [HttpGet]
-        public async Task<ActionResult<List<ActorDTO>>> GetList()
+        public MovieController(IMovieService movieService)
         {
-            var rsp = new Response<List<ActorDTO>>();
+            _movieService = movieService;
+        }
+        [HttpGet]
+        public async Task<ActionResult<List<MovieDTO>>> GetList()
+        {
+            var rsp = new Response<List<MovieDTO>>();
             try
             {
                 rsp.status = true;
-                rsp.value = await _actorService.GetActors();
+                rsp.value = await _movieService.GetMovies();
             }
             catch (Exception ex)
             {
@@ -34,17 +34,15 @@ namespace MovieCRUD_NCapas.Controllers
             return Ok(rsp);
         }
         [HttpGet("{id:int}")]
-        public async Task<ActionResult<ActorDTO>> GetActor(int id)
-        {
-            var rsp = new Response<ActorDTO>();
+        public async Task<ActionResult<Response<MovieDTO>>> GetMovie(int id) {
+            var rsp = new Response<MovieDTO>();
             try
             {
-                rsp.status = true;
-                rsp.value = await _actorService.GetById(id);
+                rsp.value = await _movieService.GetById(id);
                 if (rsp.value == null)
                 {
                     rsp.status = false;
-                    rsp.msg = "Actor not found";
+                    rsp.msg = "Movie not found";
                     return NotFound(rsp);
                 }
             }
@@ -57,14 +55,15 @@ namespace MovieCRUD_NCapas.Controllers
             return Ok(rsp);
         }
         [HttpPost]
-        public async Task<ActionResult> Create([FromBody] ActorDTO actor) {
-            var rsp = new Response<ActorDTO>();
+        public async Task<ActionResult<Response<MovieDTO>>> Create([FromBody] MovieDTO movie)
+        {
+            var rsp = new Response<MovieDTO>();
             try
             {
-                if (actor == null)
+                if (movie == null)
                 {
                     rsp.status = false;
-                    rsp.msg = "Actor can't be null";
+                    rsp.msg = "movie can't be null";
                     return BadRequest(rsp);
                 }
                 if (!ModelState.IsValid)
@@ -77,8 +76,9 @@ namespace MovieCRUD_NCapas.Controllers
                         .ToList();
                     return BadRequest(rsp);
                 }
+
                 rsp.status = true;
-                rsp.value = await _actorService.Create(actor);
+                rsp.value = await _movieService.Create(movie);
             }
             catch (Exception ex)
             {
@@ -86,17 +86,19 @@ namespace MovieCRUD_NCapas.Controllers
                 rsp.msg = $"An error occurred: {ex.Message}";
                 return StatusCode(500, rsp);
             }
-            return CreatedAtAction(nameof(GetActor), new { id = actor.Id }, rsp);
+            return CreatedAtAction(nameof(GetMovie), new { id = movie.Id }, rsp);
         }
+
         [HttpPut("{id:int}")]
-        public async Task<ActionResult<Response<bool>>> Update([FromBody] ActorDTO actor, int id) {
+        public async Task<ActionResult<Response<bool>>> Update([FromBody] MovieDTO movie, int id)
+        {
             var rsp = new Response<bool>();
             try
             {
-                if (actor == null || actor.Id != id)
+                if (movie == null || movie.Id != id)
                 {
                     rsp.status = false;
-                    rsp.msg = "Actor can't be null or ID mismatch";
+                    rsp.msg = "Movie can't be null or ID mismatch";
                     return BadRequest(rsp);
                 }
                 if (!ModelState.IsValid)
@@ -109,16 +111,16 @@ namespace MovieCRUD_NCapas.Controllers
                         .ToList();
                     return BadRequest(rsp);
                 }
-                bool response = await _actorService.Update(actor);
+                bool response = await _movieService.Update(movie);
                 if (!response)
                 {
                     rsp.status = false;
-                    rsp.msg = "Actor couldn't be updated";
+                    rsp.msg = "Movie couldn't be updated";
                     return NotFound(rsp);
                 }
                 rsp.status = true;
-                rsp.msg = "Actor updated successfully";
-                rsp.value = response;
+                rsp.msg = "Movie updated successfully";
+                rsp.value = true;
             }
             catch (Exception ex)
             {
@@ -134,23 +136,16 @@ namespace MovieCRUD_NCapas.Controllers
             var rsp = new Response<bool>();
             try
             {
-                ActorDTO actor = await _actorService.GetById(id);
-                if (actor == null)
-                {
-                    rsp.status = false;
-                    rsp.msg = "Actor not found";
-                    return NotFound(rsp);
-                }
-                bool response = await _actorService.Delete(id);
+                bool response = await _movieService.Delete(id);
                 if (!response)
                 {
-                    rsp.status=false;
-                    rsp.msg = "Actor couldn't be deleted";
-                    return StatusCode(500, rsp);
+                    rsp.status = false;
+                    rsp.msg = "Movie couldn't be deleted";
+                    return NotFound(rsp);
                 }
                 rsp.status = true;
-                rsp.value = response;
-                rsp.msg = "Actor deleted successfully";
+                rsp.value = true;
+                rsp.msg = "Movie deleted successfully";
             }
             catch (Exception ex)
             {
@@ -158,7 +153,7 @@ namespace MovieCRUD_NCapas.Controllers
                 rsp.msg = $"An error occurred: {ex.Message}";
                 return StatusCode(500, rsp);
             }
-            return Ok(rsp);
+            return NoContent();
         }
     }
 }

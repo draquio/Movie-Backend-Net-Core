@@ -17,9 +17,17 @@ namespace MovieCRUD_NCapas.IOC
                 options.UseSqlServer(configuration.GetConnectionString("Connection")); 
             });
             services.AddSingleton<MapperFunctions>();
-            services.AddAutoMapper(typeof(AutoMapperProfile));
+            services.AddAutoMapper(cfg =>
+            {
+                var serviceProvider = services.BuildServiceProvider();
+                var mapperFunctions = serviceProvider.GetService<MapperFunctions>();
 
-            services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+                cfg.AddProfile(new AutoMapperProfile(mapperFunctions));
+            });
+
+
+            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddScoped<IMovieRepository, MovieRepository>();
 
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IActorService, ActorService>();

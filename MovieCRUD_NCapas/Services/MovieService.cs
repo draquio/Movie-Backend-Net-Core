@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MovieCRUD_NCapas.DTO;
 using MovieCRUD_NCapas.Models;
+using MovieCRUD_NCapas.Repository;
 using MovieCRUD_NCapas.Repository.Interface;
 using MovieCRUD_NCapas.Services.Interface;
 
@@ -8,10 +9,10 @@ namespace MovieCRUD_NCapas.Services
 {
     public class MovieService : IMovieService
     {
-        private readonly IGenericRepository<Movie> _movieRepository;
+        private readonly IMovieRepository _movieRepository;
         private readonly IMapper _mapper;
 
-        public MovieService(IGenericRepository<Movie> movieRepository, IMapper mapper)
+        public MovieService(IMovieRepository movieRepository, IMapper mapper)
         {
             _movieRepository = movieRepository;
             _mapper = mapper;
@@ -31,7 +32,7 @@ namespace MovieCRUD_NCapas.Services
             }
             catch (Exception ex)
             {
-                throw new ApplicationException("An error occurred while retrieving the Movies", ex);
+                throw new ApplicationException($"An error occurred while retrieving the Movies: {ex.Message}", ex);
             }
         }
         public async Task<MovieDTO> GetById(int id)
@@ -48,7 +49,7 @@ namespace MovieCRUD_NCapas.Services
             }
             catch (Exception ex)
             {
-                throw new ApplicationException("An error occurred while retrieving the Movie", ex);
+                throw new ApplicationException($"An error occurred while retrieving the Movie: {ex.Message}", ex);
             }
         }
         public async Task<MovieDTO> Create(MovieDTO movieDTO)
@@ -66,7 +67,7 @@ namespace MovieCRUD_NCapas.Services
             }
             catch (Exception ex)
             {
-                throw new ApplicationException("An error occurred while creating the Movie", ex);
+                throw new ApplicationException($"An error occurred while creating the Movie: {ex.Message}", ex);
             }
         }
         public async Task<bool> Update(MovieDTO movieDTO)
@@ -88,7 +89,7 @@ namespace MovieCRUD_NCapas.Services
             }
             catch (Exception ex)
             {
-                throw new ApplicationException("An error occurred while editing the Movie", ex);
+                throw new ApplicationException($"An error occurred while editing the Movie: {ex.Message}", ex);
             }
         }
         public async Task<bool> Delete(int id)
@@ -109,7 +110,7 @@ namespace MovieCRUD_NCapas.Services
             }
             catch (Exception ex)
             {
-                throw new ApplicationException("An error occurred while deleting the Movie", ex);
+                throw new ApplicationException($"An error occurred while deleting the Movie: {ex.Message}", ex);
             }
         }
 

@@ -1,4 +1,6 @@
-﻿namespace MovieCRUD_NCapas.DTO
+﻿using MovieCRUD_NCapas.Models;
+
+namespace MovieCRUD_NCapas.DTO
 {
     public class MovieDTO
     {
