@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using MovieCRUD_NCapas.DTO;
+using MovieCRUD_NCapas.DTO.Review;
 using MovieCRUD_NCapas.Models;
 using MovieCRUD_NCapas.Repository.Interface;
 using MovieCRUD_NCapas.Services.Interface;

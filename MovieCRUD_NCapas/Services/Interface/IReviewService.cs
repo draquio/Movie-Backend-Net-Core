@@ -1,4 +1,4 @@
-﻿using MovieCRUD_NCapas.DTO;
+﻿using MovieCRUD_NCapas.DTO.Review;
 
 namespace MovieCRUD_NCapas.Services.Interface
 {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using MovieCRUD_NCapas.DTO;
+using MovieCRUD_NCapas.DTO.Review;
 using MovieCRUD_NCapas.Models;
 using MovieCRUD_NCapas.Services.Interface;
 using MovieCRUD_NCapas.Utility;

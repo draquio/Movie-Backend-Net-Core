@@ -1,7 +1,7 @@
 ﻿
 
 using Microsoft.AspNetCore.Mvc;
-using MovieCRUD_NCapas.DTO;
+using MovieCRUD_NCapas.DTO.Category;
 using MovieCRUD_NCapas.Services.Interface;
 using MovieCRUD_NCapas.Utility;
 

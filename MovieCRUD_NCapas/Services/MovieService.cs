@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using MovieCRUD_NCapas.DTO;
+using MovieCRUD_NCapas.DTO.Movie;
 using MovieCRUD_NCapas.Models;
 using MovieCRUD_NCapas.Repository;
 using MovieCRUD_NCapas.Repository.Interface;
@@ -18,11 +18,11 @@ namespace MovieCRUD_NCapas.Services
             _mapper = mapper;
         }
 
-        public async Task<List<MovieDTO>> GetMovies()
+        public async Task<List<MovieDTO>> GetMovies(int page, int pageSize)
         {
             try
             {
-                List<Movie> listMovie = await _movieRepository.GetAll();
+                List<Movie> listMovie = await _movieRepository.GetAllMovies(page, pageSize);
                 if (listMovie == null)
                 {
                     return new List<MovieDTO>();
@@ -52,12 +52,12 @@ namespace MovieCRUD_NCapas.Services
                 throw new ApplicationException($"An error occurred while retrieving the Movie: {ex.Message}", ex);
             }
         }
-        public async Task<MovieDTO> Create(MovieDTO movieDTO)
+        public async Task<MovieDTO> Create(CreateMovieDTO createmovieDTO)
         {
             try
             {
-                Movie movieModel = _mapper.Map<Movie>(movieDTO);
-                Movie movieCreated = await _movieRepository.Create(movieModel);
+                Movie movie = _mapper.Map<Movie>(createmovieDTO);
+                Movie movieCreated = await _movieRepository.CreateMovie(movie, createmovieDTO.ActorsIds, createmovieDTO.CategoriesIds);
                 if (movieCreated == null || movieCreated.Id == 0)
                 {
                     throw new InvalidOperationException("Movie couldn't be created");

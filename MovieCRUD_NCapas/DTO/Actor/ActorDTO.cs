@@ -1,4 +1,4 @@
-﻿namespace MovieCRUD_NCapas.DTO
+﻿namespace MovieCRUD_NCapas.DTO.Actor
 {
     public class ActorDTO
     {

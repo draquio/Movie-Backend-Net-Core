@@ -25,24 +25,39 @@ namespace MovieCRUD_NCapas.DBContext
 
             // Movie Category -> muchos a muchos
             modelBuilder.Entity<MovieCategory>()
+                .HasKey(mc => new { mc.MovieId, mc.CategoryId });
+            modelBuilder.Entity<MovieCategory>()
                 .HasOne(mc => mc.Movie)
                 .WithMany(m => m.MovieCategories)
-                .HasForeignKey(mc => mc.MovieId);
+                .HasForeignKey(mc => mc.MovieId)
+                .OnDelete(DeleteBehavior.Restrict);
             modelBuilder.Entity<MovieCategory>()
                 .HasOne(mc => mc.Category)
                 .WithMany(c => c.MovieCategories)
-                .HasForeignKey(mc => mc.CategoryId);
+                .HasForeignKey(mc => mc.CategoryId)
+                .OnDelete(DeleteBehavior.Restrict);
 
-
-            // Movie Actor -> muchos a muchos
+            // Movie Actor 
+            modelBuilder.Entity<MovieActor>()
+                .HasKey(ma => new { ma.MovieId, ma.ActorId });
             modelBuilder.Entity<MovieActor>()
                 .HasOne(mc => mc.Movie)
                 .WithMany(a => a.MovieActors)
-                .HasForeignKey(mc => mc.MovieId);
+                .HasForeignKey(mc => mc.MovieId)
+                .OnDelete(DeleteBehavior.Restrict);
             modelBuilder.Entity<MovieActor>()
                 .HasOne(mc => mc.Actor)
                 .WithMany(a => a.MovieActors)
-                .HasForeignKey(mc => mc.ActorId);
+                .HasForeignKey(mc => mc.ActorId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            // Reviews con Movies 1 a muchas
+            modelBuilder.Entity<Review>()
+                .HasOne(r => r.Movie)
+                .WithMany(m => m.Reviews)
+                .HasForeignKey(r => r.MovieId)
+                .OnDelete(DeleteBehavior.Restrict);
+
         }
     }
 }

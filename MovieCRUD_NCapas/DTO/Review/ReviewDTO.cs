@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace MovieCRUD_NCapas.DTO
+namespace MovieCRUD_NCapas.DTO.Review
 {
     public class ReviewDTO
     {

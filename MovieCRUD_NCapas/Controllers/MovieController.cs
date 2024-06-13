@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MovieCRUD_NCapas.DTO;
+using MovieCRUD_NCapas.DTO.Movie;
 using MovieCRUD_NCapas.Models;
 using MovieCRUD_NCapas.Services.Interface;
 using MovieCRUD_NCapas.Utility;
@@ -17,13 +17,19 @@ namespace MovieCRUD_NCapas.Controllers
             _movieService = movieService;
         }
         [HttpGet]
-        public async Task<ActionResult<List<MovieDTO>>> GetList()
+        public async Task<ActionResult<List<MovieDTO>>> GetList(int page = 1, int pageSize = 10)
         {
-            var rsp = new Response<List<MovieDTO>>();
+            var rsp = new PagedResponse<List<MovieDTO>>();
             try
             {
+                if (pageSize > 20)
+                {
+                    pageSize = 20;
+                }
                 rsp.status = true;
-                rsp.value = await _movieService.GetMovies();
+                rsp.value = await _movieService.GetMovies(page, pageSize);
+                rsp.pageSize = pageSize;
+                rsp.pageNumber = page;
             }
             catch (Exception ex)
             {
@@ -55,7 +61,7 @@ namespace MovieCRUD_NCapas.Controllers
             return Ok(rsp);
         }
         [HttpPost]
-        public async Task<ActionResult<Response<MovieDTO>>> Create([FromBody] MovieDTO movie)
+        public async Task<ActionResult<Response<MovieDTO>>> Create([FromBody] CreateMovieDTO movie)
         {
             var rsp = new Response<MovieDTO>();
             try
@@ -86,7 +92,7 @@ namespace MovieCRUD_NCapas.Controllers
                 rsp.msg = $"An error occurred: {ex.Message}";
                 return StatusCode(500, rsp);
             }
-            return CreatedAtAction(nameof(GetMovie), new { id = movie.Id }, rsp);
+            return CreatedAtAction(nameof(GetMovie), new { id = rsp.value.Id }, rsp);
         }
 
         [HttpPut("{id:int}")]

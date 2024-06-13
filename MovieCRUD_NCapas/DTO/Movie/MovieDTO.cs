@@ -1,6 +1,8 @@
-﻿using MovieCRUD_NCapas.Models;
+﻿using MovieCRUD_NCapas.DTO.Actor;
+using MovieCRUD_NCapas.DTO.Category;
+using MovieCRUD_NCapas.Models;
 
-namespace MovieCRUD_NCapas.DTO
+namespace MovieCRUD_NCapas.DTO.Movie
 {
     public class MovieDTO
     {
@@ -11,7 +13,7 @@ namespace MovieCRUD_NCapas.DTO
         public string? Duration { get; set; }
         public string? Rating { get; set; }
         public string? Poster { get; set; }
-        public List<CategoryDTO>? Categories { get; set; }
-        public List<ActorDTO>? Actors { get; set; }
+        public List<CategoryResponseDTO>? Categories { get; set; }
+        public List<ActorResponseDTO>? Actors { get; set; }
     }
 }

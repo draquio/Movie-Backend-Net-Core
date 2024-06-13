@@ -28,6 +28,9 @@ namespace MovieCRUD_NCapas.IOC
 
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddScoped<IMovieRepository, MovieRepository>();
+            services.AddScoped<IActorRepository, ActorRepository>();
+            services.AddScoped<IMovieActorRepository, MovieActorRepository>();
+
 
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IActorService, ActorService>();

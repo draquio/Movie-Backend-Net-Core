@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MovieCRUD_NCapas.DBContext;
 
@@ -11,9 +12,11 @@ using MovieCRUD_NCapas.DBContext;
 namespace MovieCRUD_NCapas.Migrations
 {
     [DbContext(typeof(DBMovieContext))]
-    partial class DBMovieContextModelSnapshot : ModelSnapshot
+    [Migration("20240613211358_v0.4-Agregando-Relaciones-entre-tablas")]
+    partial class v04AgregandoRelacionesentretablas
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

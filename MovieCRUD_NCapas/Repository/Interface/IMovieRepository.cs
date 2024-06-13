@@ -4,6 +4,7 @@ namespace MovieCRUD_NCapas.Repository.Interface
 {
     public interface IMovieRepository : IGenericRepository<Movie>
     {
-        //Task<List<Movie>> GetAllFullData();
+        Task<Movie> CreateMovie(Movie movie, List<int> actorsIds, List<int> categoriesIds);
+        Task<List<Movie>> GetAllMovies(int page, int pageSize);
     }
 }
