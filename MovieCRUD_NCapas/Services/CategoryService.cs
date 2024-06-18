@@ -18,11 +18,11 @@ namespace MovieCRUD_NCapas.Services
         }
 
         // Get category list
-        public async Task<List<CategoryDTO>> GetCategories()
+        public async Task<List<CategoryDTO>> GetCategories(int page, int pageSize)
         {
             try
             {
-                List<Category> listCategories = await _categoryRepository.GetAll();
+                List<Category> listCategories = await _categoryRepository.GetAll(page, pageSize);
                 if (listCategories == null || !listCategories.Any())
                 {
                     return new List<CategoryDTO>();

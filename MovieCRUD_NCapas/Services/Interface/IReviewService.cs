@@ -4,7 +4,7 @@ namespace MovieCRUD_NCapas.Services.Interface
 {
     public interface IReviewService
     {
-        Task<List<ReviewDTO>> GetReviews();
+        Task<List<ReviewDTO>> GetReviews(int page, int pageSize);
         Task<ReviewDTO> GetById(int id);
         Task<ReviewDTO> Create(ReviewDTO reviewDTO);
         Task<bool> Update(ReviewDTO reviewDTO);

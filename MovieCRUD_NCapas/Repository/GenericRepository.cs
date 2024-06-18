@@ -14,11 +14,14 @@ namespace MovieCRUD_NCapas.Repository
             _dbContext = dbContext;
         }
 
-        public async Task<List<T>> GetAll()
+        public async Task<List<T>> GetAll(int page, int pageSize)
         {
             try
             {
-                List<T> model = await _dbContext.Set<T>().ToListAsync();
+                List<T> model = await _dbContext.Set<T>()
+                    .Skip((page - 1) * pageSize)
+                    .Take(pageSize)
+                    .ToListAsync();
                 return model;
             }
             catch

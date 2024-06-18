@@ -17,11 +17,11 @@ namespace MovieCRUD_NCapas.Services
             _mapper = mapper;
         }
 
-        public async Task<List<ActorDTO>> GetActors()
+        public async Task<List<ActorDTO>> GetActors(int page, int pageSize)
         {
             try
             {
-                List<Actor> listActors = await _actorRepository.GetAll();
+                List<Actor> listActors = await _actorRepository.GetAll(page, pageSize);
                 if (listActors == null || !listActors.Any())
                 {
                     return new List<ActorDTO>();

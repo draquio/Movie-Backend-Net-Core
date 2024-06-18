@@ -17,13 +17,17 @@ namespace MovieCRUD_NCapas.Controllers
             _reviewService = reviewService;
         }
         [HttpGet]
-        public async Task<ActionResult<List<ReviewDTO>>> GetList()
+        public async Task<ActionResult<List<ReviewDTO>>> GetList(int page = 1, int pageSize = 10)
         {
             var rsp = new Response<List<ReviewDTO>>();
             try
             {
+                if (pageSize > 20)
+                {
+                    pageSize = 20;
+                }
                 rsp.status = true;
-                rsp.value = await _reviewService.GetReviews();
+                rsp.value = await _reviewService.GetReviews(page, pageSize);
 
             }
             catch (Exception ex)

@@ -19,12 +19,16 @@ namespace MovieCRUD_NCapas.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<CategoryDTO>> GetList() {
+        public async Task<ActionResult<CategoryDTO>> GetList(int page = 1, int pageSize = 10) {
             var rsp = new Response<List<CategoryDTO>>();
             try
             {
+                if (pageSize > 20)
+                {
+                    pageSize = 20;
+                }
                 rsp.status = true;
-                rsp.value = await _categoryService.GetCategories();
+                rsp.value = await _categoryService.GetCategories(page, pageSize);
             }
             catch (Exception ex)
             {

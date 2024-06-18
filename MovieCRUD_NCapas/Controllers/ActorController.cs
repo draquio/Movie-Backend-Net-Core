@@ -17,13 +17,17 @@ namespace MovieCRUD_NCapas.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<ActorDTO>>> GetList()
+        public async Task<ActionResult<List<ActorDTO>>> GetList(int page = 1, int pageSize = 10)
         {
             var rsp = new Response<List<ActorDTO>>();
             try
             {
+                if (pageSize > 20)
+                {
+                    pageSize = 20;
+                }
                 rsp.status = true;
-                rsp.value = await _actorService.GetActors();
+                rsp.value = await _actorService.GetActors(page, pageSize);
             }
             catch (Exception ex)
             {

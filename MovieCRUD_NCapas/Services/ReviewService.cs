@@ -15,11 +15,11 @@ namespace MovieCRUD_NCapas.Services
             _reviewRepository = reviewRepository;
             _mapper = mapper;
         }
-        public async Task<List<ReviewDTO>> GetReviews()
+        public async Task<List<ReviewDTO>> GetReviews(int page, int pageSize)
         {
             try
             {
-                List<Review> listReviews = await _reviewRepository.GetAll();
+                List<Review> listReviews = await _reviewRepository.GetAll(page, pageSize);
                 if (listReviews == null || !listReviews.Any())
                 {
                     return new List<ReviewDTO>();

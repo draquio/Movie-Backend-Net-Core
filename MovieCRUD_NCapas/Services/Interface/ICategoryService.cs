@@ -4,7 +4,7 @@ namespace MovieCRUD_NCapas.Services.Interface
 {
     public interface ICategoryService
     {
-        Task<List<CategoryDTO>> GetCategories();
+        Task<List<CategoryDTO>> GetCategories(int page, int pageSize);
         Task<CategoryDTO> GetById(int id);
         Task<CategoryDTO> Create(CategoryDTO categoryDTO);
         Task<bool> Update(CategoryDTO categoryDTO);

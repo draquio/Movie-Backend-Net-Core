@@ -4,7 +4,7 @@ namespace MovieCRUD_NCapas.Services.Interface
 {
     public interface IActorService
     {
-        Task<List<ActorDTO>> GetActors();
+        Task<List<ActorDTO>> GetActors(int page, int pageSize);
         Task<ActorDTO> GetById(int id);
         Task<ActorDTO> Create(ActorDTO actorDTO);
         Task<bool> Update(ActorDTO actorDTO);

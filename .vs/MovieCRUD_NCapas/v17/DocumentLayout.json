@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "E:\\Net\\MovieCRUD_NCapas\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7F288C9A-7814-4284-9C24-BDE2CE5F44AE}|MovieCRUD_NCapas\\MovieCRUD_NCapas.csproj|e:\\net\\moviecrud_ncapas\\moviecrud_ncapas\\controllers\\moviecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F288C9A-7814-4284-9C24-BDE2CE5F44AE}|MovieCRUD_NCapas\\MovieCRUD_NCapas.csproj|solutionrelative:moviecrud_ncapas\\controllers\\moviecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7F288C9A-7814-4284-9C24-BDE2CE5F44AE}|MovieCRUD_NCapas\\MovieCRUD_NCapas.csproj|e:\\net\\moviecrud_ncapas\\moviecrud_ncapas\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F288C9A-7814-4284-9C24-BDE2CE5F44AE}|MovieCRUD_NCapas\\MovieCRUD_NCapas.csproj|solutionrelative:moviecrud_ncapas\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7F288C9A-7814-4284-9C24-BDE2CE5F44AE}|MovieCRUD_NCapas\\MovieCRUD_NCapas.csproj|e:\\net\\moviecrud_ncapas\\moviecrud_ncapas\\services\\interface\\imovieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F288C9A-7814-4284-9C24-BDE2CE5F44AE}|MovieCRUD_NCapas\\MovieCRUD_NCapas.csproj|solutionrelative:moviecrud_ncapas\\services\\interface\\imovieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7F288C9A-7814-4284-9C24-BDE2CE5F44AE}|MovieCRUD_NCapas\\MovieCRUD_NCapas.csproj|e:\\net\\moviecrud_ncapas\\moviecrud_ncapas\\utility\\response.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F288C9A-7814-4284-9C24-BDE2CE5F44AE}|MovieCRUD_NCapas\\MovieCRUD_NCapas.csproj|solutionrelative:moviecrud_ncapas\\utility\\response.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7F288C9A-7814-4284-9C24-BDE2CE5F44AE}|MovieCRUD_NCapas\\MovieCRUD_NCapas.csproj|e:\\net\\moviecrud_ncapas\\moviecrud_ncapas\\services\\reviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F288C9A-7814-4284-9C24-BDE2CE5F44AE}|MovieCRUD_NCapas\\MovieCRUD_NCapas.csproj|solutionrelative:moviecrud_ncapas\\services\\reviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,45 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Response.cs",
-              "DocumentMoniker": "E:\\Net\\MovieCRUD_NCapas\\MovieCRUD_NCapas\\Utility\\Response.cs",
-              "RelativeDocumentMoniker": "MovieCRUD_NCapas\\Utility\\Response.cs",
-              "ToolTip": "E:\\Net\\MovieCRUD_NCapas\\MovieCRUD_NCapas\\Utility\\Response.cs",
-              "RelativeToolTip": "MovieCRUD_NCapas\\Utility\\Response.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAeAAAA",
+              "DocumentIndex": 0,
+              "Title": "ReviewController.cs",
+              "DocumentMoniker": "E:\\Net\\MovieCRUD_NCapas\\MovieCRUD_NCapas\\Controllers\\ReviewController.cs",
+              "RelativeDocumentMoniker": "MovieCRUD_NCapas\\Controllers\\ReviewController.cs",
+              "ToolTip": "E:\\Net\\MovieCRUD_NCapas\\MovieCRUD_NCapas\\Controllers\\ReviewController.cs",
+              "RelativeToolTip": "MovieCRUD_NCapas\\Controllers\\ReviewController.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAA5wBcAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T21:47:56.668Z",
+              "WhenOpened": "2024-06-18T21:54:41.956Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "IMovieService.cs",
-              "DocumentMoniker": "E:\\Net\\MovieCRUD_NCapas\\MovieCRUD_NCapas\\Services\\Interface\\IMovieService.cs",
-              "RelativeDocumentMoniker": "MovieCRUD_NCapas\\Services\\Interface\\IMovieService.cs",
-              "ToolTip": "E:\\Net\\MovieCRUD_NCapas\\MovieCRUD_NCapas\\Services\\Interface\\IMovieService.cs",
-              "RelativeToolTip": "MovieCRUD_NCapas\\Services\\Interface\\IMovieService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAA9AAAA",
+              "Title": "ReviewService.cs",
+              "DocumentMoniker": "E:\\Net\\MovieCRUD_NCapas\\MovieCRUD_NCapas\\Services\\ReviewService.cs",
+              "RelativeDocumentMoniker": "MovieCRUD_NCapas\\Services\\ReviewService.cs",
+              "ToolTip": "E:\\Net\\MovieCRUD_NCapas\\MovieCRUD_NCapas\\Services\\ReviewService.cs",
+              "RelativeToolTip": "MovieCRUD_NCapas\\Services\\ReviewService.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAxwBIAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T21:44:19.512Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MovieController.cs",
-              "DocumentMoniker": "E:\\Net\\MovieCRUD_NCapas\\MovieCRUD_NCapas\\Controllers\\MovieController.cs",
-              "RelativeDocumentMoniker": "MovieCRUD_NCapas\\Controllers\\MovieController.cs",
-              "ToolTip": "E:\\Net\\MovieCRUD_NCapas\\MovieCRUD_NCapas\\Controllers\\MovieController.cs",
-              "RelativeToolTip": "MovieCRUD_NCapas\\Controllers\\MovieController.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAQwB8AAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T21:43:11.055Z",
+              "WhenOpened": "2024-06-18T21:54:26.276Z",
               "EditorCaption": ""
             }
           ]
