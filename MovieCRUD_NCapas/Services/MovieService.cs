@@ -22,7 +22,7 @@ namespace MovieCRUD_NCapas.Services
         {
             try
             {
-                List<Movie> listMovie = await _movieRepository.GetAllMovies(page, pageSize);
+                List<Movie> listMovie = await _movieRepository.GetAll(page, pageSize);
                 if (listMovie == null)
                 {
                     return new List<MovieDTO>();
@@ -57,7 +57,7 @@ namespace MovieCRUD_NCapas.Services
             try
             {
                 Movie movie = _mapper.Map<Movie>(createmovieDTO);
-                Movie movieCreated = await _movieRepository.CreateMovie(movie, createmovieDTO.ActorsIds, createmovieDTO.CategoriesIds);
+                Movie movieCreated = await _movieRepository.Create(movie, createmovieDTO.ActorsIds, createmovieDTO.CategoriesIds);
                 if (movieCreated == null || movieCreated.Id == 0)
                 {
                     throw new InvalidOperationException("Movie couldn't be created");

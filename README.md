@@ -8,6 +8,10 @@ El motor de base de datos es SQLServer con multiples tablas.
 - Actor
 - Review
 
+## Otras Características
+- Paginación
+- Test unitarios
+
 ## Desarrollo
 El sistema fue realizado con la arquitectura de N Capas implementando los siguientes patrones:
 - Patrón Repositorio

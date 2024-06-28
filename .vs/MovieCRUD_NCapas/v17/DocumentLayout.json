@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "E:\\Net\\MovieCRUD_NCapas\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7F288C9A-7814-4284-9C24-BDE2CE5F44AE}|MovieCRUD_NCapas\\MovieCRUD_NCapas.csproj|e:\\net\\moviecrud_ncapas\\moviecrud_ncapas\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F288C9A-7814-4284-9C24-BDE2CE5F44AE}|MovieCRUD_NCapas\\MovieCRUD_NCapas.csproj|solutionrelative:moviecrud_ncapas\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7F288C9A-7814-4284-9C24-BDE2CE5F44AE}|MovieCRUD_NCapas\\MovieCRUD_NCapas.csproj|e:\\net\\moviecrud_ncapas\\moviecrud_ncapas\\services\\reviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F288C9A-7814-4284-9C24-BDE2CE5F44AE}|MovieCRUD_NCapas\\MovieCRUD_NCapas.csproj|solutionrelative:moviecrud_ncapas\\services\\reviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{352F95F7-2FCE-4CD4-AC0C-2DDCC1EAF796}|UnitTesting_Repository\\UnitTesting_Repository.csproj|e:\\net\\moviecrud_ncapas\\unittesting_repository\\repository\\movietest\\movierepository_deletetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{352F95F7-2FCE-4CD4-AC0C-2DDCC1EAF796}|UnitTesting_Repository\\UnitTesting_Repository.csproj|solutionrelative:unittesting_repository\\repository\\movietest\\movierepository_deletetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ReviewController.cs",
-              "DocumentMoniker": "E:\\Net\\MovieCRUD_NCapas\\MovieCRUD_NCapas\\Controllers\\ReviewController.cs",
-              "RelativeDocumentMoniker": "MovieCRUD_NCapas\\Controllers\\ReviewController.cs",
-              "ToolTip": "E:\\Net\\MovieCRUD_NCapas\\MovieCRUD_NCapas\\Controllers\\ReviewController.cs",
-              "RelativeToolTip": "MovieCRUD_NCapas\\Controllers\\ReviewController.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAA5wBcAAAANAAAA",
+              "Title": "MovieRepository_DeleteTests.cs",
+              "DocumentMoniker": "E:\\Net\\MovieCRUD_NCapas\\UnitTesting_Repository\\Repository\\MovieTest\\MovieRepository_DeleteTests.cs",
+              "RelativeDocumentMoniker": "UnitTesting_Repository\\Repository\\MovieTest\\MovieRepository_DeleteTests.cs",
+              "ToolTip": "E:\\Net\\MovieCRUD_NCapas\\UnitTesting_Repository\\Repository\\MovieTest\\MovieRepository_DeleteTests.cs",
+              "RelativeToolTip": "UnitTesting_Repository\\Repository\\MovieTest\\MovieRepository_DeleteTests.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAxwCwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T21:54:41.956Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ReviewService.cs",
-              "DocumentMoniker": "E:\\Net\\MovieCRUD_NCapas\\MovieCRUD_NCapas\\Services\\ReviewService.cs",
-              "RelativeDocumentMoniker": "MovieCRUD_NCapas\\Services\\ReviewService.cs",
-              "ToolTip": "E:\\Net\\MovieCRUD_NCapas\\MovieCRUD_NCapas\\Services\\ReviewService.cs",
-              "RelativeToolTip": "MovieCRUD_NCapas\\Services\\ReviewService.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAxwBIAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T21:54:26.276Z",
+              "WhenOpened": "2024-06-27T21:59:42.636Z",
               "EditorCaption": ""
             }
           ]

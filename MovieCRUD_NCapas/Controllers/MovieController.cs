@@ -19,7 +19,7 @@ namespace MovieCRUD_NCapas.Controllers
         [HttpGet]
         public async Task<ActionResult<List<MovieDTO>>> GetList(int page = 1, int pageSize = 10)
         {
-            var rsp = new PagedResponse<List<MovieDTO>>();
+            var rsp = new Response<List<MovieDTO>>();
             try
             {
                 if (pageSize > 20)
@@ -28,8 +28,6 @@ namespace MovieCRUD_NCapas.Controllers
                 }
                 rsp.status = true;
                 rsp.value = await _movieService.GetMovies(page, pageSize);
-                rsp.pageSize = pageSize;
-                rsp.pageNumber = page;
             }
             catch (Exception ex)
             {
@@ -48,7 +46,7 @@ namespace MovieCRUD_NCapas.Controllers
                 if (rsp.value == null)
                 {
                     rsp.status = false;
-                    rsp.msg = "Movie not found";
+                    rsp.msg = $"Movie with ID {id} not found";
                     return NotFound(rsp);
                 }
             }
@@ -159,7 +157,7 @@ namespace MovieCRUD_NCapas.Controllers
                 rsp.msg = $"An error occurred: {ex.Message}";
                 return StatusCode(500, rsp);
             }
-            return NoContent();
+            return Ok(rsp);
         }
     }
 }

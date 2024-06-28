@@ -48,7 +48,7 @@ namespace MovieCRUD_NCapas.Controllers
                 if (reviewDTO == null)
                 {
                     rsp.status = false;
-                    rsp.msg = "Category not found";
+                    rsp.msg = $"Review with ID {id} not found";
                     return NotFound(rsp);
                 }
                 rsp.status = true;
@@ -158,7 +158,7 @@ namespace MovieCRUD_NCapas.Controllers
                 rsp.msg = $"An error occurred: {ex.Message}";
                 return StatusCode(500, rsp);
             }
-            return NoContent();
+            return Ok(rsp);
         }
     }
 }

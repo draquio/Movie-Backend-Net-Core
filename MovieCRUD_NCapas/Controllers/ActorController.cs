@@ -1,6 +1,7 @@
 ﻿
 using Microsoft.AspNetCore.Mvc;
 using MovieCRUD_NCapas.DTO.Actor;
+using MovieCRUD_NCapas.Models;
 using MovieCRUD_NCapas.Services.Interface;
 using MovieCRUD_NCapas.Utility;
 
@@ -48,7 +49,7 @@ namespace MovieCRUD_NCapas.Controllers
                 if (rsp.value == null)
                 {
                     rsp.status = false;
-                    rsp.msg = "Actor not found";
+                    rsp.msg = $"Actor with ID {id} not found";
                     return NotFound(rsp);
                 }
             }
@@ -61,7 +62,7 @@ namespace MovieCRUD_NCapas.Controllers
             return Ok(rsp);
         }
         [HttpPost]
-        public async Task<ActionResult> Create([FromBody] ActorDTO actor) {
+        public async Task<ActionResult<ActorDTO>> Create([FromBody] ActorDTO actor) {
             var rsp = new Response<ActorDTO>();
             try
             {
@@ -138,19 +139,12 @@ namespace MovieCRUD_NCapas.Controllers
             var rsp = new Response<bool>();
             try
             {
-                ActorDTO actor = await _actorService.GetById(id);
-                if (actor == null)
-                {
-                    rsp.status = false;
-                    rsp.msg = "Actor not found";
-                    return NotFound(rsp);
-                }
                 bool response = await _actorService.Delete(id);
                 if (!response)
                 {
                     rsp.status=false;
                     rsp.msg = "Actor couldn't be deleted";
-                    return StatusCode(500, rsp);
+                    return NotFound(rsp);
                 }
                 rsp.status = true;
                 rsp.value = response;

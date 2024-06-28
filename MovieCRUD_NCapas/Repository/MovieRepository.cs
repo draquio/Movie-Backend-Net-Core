@@ -15,7 +15,7 @@ namespace MovieCRUD_NCapas.Repository
             _dbContext = dbContext;
         }
         
-        public new async Task<List<Movie>> GetAllMovies(int page, int pageSize)
+        public new async Task<List<Movie>> GetAll(int page, int pageSize)
         {
             try
             {
@@ -41,19 +41,6 @@ namespace MovieCRUD_NCapas.Repository
                     .Include(m => m.MovieCategories).ThenInclude(mc => mc.Category)
                     .Include(a => a.MovieActors).ThenInclude(ma => ma.Actor)
                     .FirstOrDefaultAsync(m => m.Id == id);
-                return movie;
-            }
-            catch
-            {
-                throw;
-            }
-        }
-        public new async Task<Movie> Create(Movie movie)
-        {
-            try
-            {
-                _dbContext.Set<Movie>().Add(movie);
-                await _dbContext.SaveChangesAsync();
                 return movie;
             }
             catch
@@ -88,7 +75,7 @@ namespace MovieCRUD_NCapas.Repository
             }
         }
 
-        public async Task<Movie> CreateMovie(Movie movie, List<int> actorsIds, List<int> categoriesIds)
+        public async Task<Movie> Create(Movie movie, List<int> actorsIds, List<int> categoriesIds)
         {
             using var transaction = await _dbContext.Database.BeginTransactionAsync();
             try
